@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <Tree />
-  </div>
+  <v-app>
+    <v-main>
+      <Tree />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import Tree from "./components/Tree";
-
 export default {
-  name: "App",
+  name: 'App',
+
   components: {
-    Tree,
+    Tree: () => import('./components/Tree'),
   },
 };
 </script>
-
