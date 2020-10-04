@@ -2,11 +2,11 @@
   <v-list-item-content>
     <v-list-item @click="toggle" @dblclick="addFolder">
       <v-icon v-if="isFolder">
-        {{ isOpen ? "mdi mdi-folder-open" : "mdi mdi-folder" }}
+        {{ isOpen ? 'mdi mdi-folder-open' : 'mdi mdi-folder' }}
       </v-icon>
 
       <v-list-item-title class="pl-4">
-        {{ item.name }} {{ index }}
+        {{ item.name }}
       </v-list-item-title>
     </v-list-item>
     <ul v-show="isOpen" v-if="isFolder">
@@ -14,7 +14,6 @@
         v-for="(child, index) in item.children"
         :key="index"
         :item="child"
-        :index="index"
         @add-folder="$emit('add-folder', $event)"
         @add-item="$emit('add-item', $event)"
         title="Double click in a node to make it a folder"
@@ -33,7 +32,7 @@
 
 <script>
 export default {
-  name: "Node",
+  name: 'Node',
   props: {
     item: Object,
     index: Number,
@@ -54,7 +53,7 @@ export default {
     },
     addFolder() {
       if (!this.isFolder) {
-        this.$emit("add-folder", this.item);
+        this.$emit('add-folder', this.item);
         this.isOpen = true;
       }
     },

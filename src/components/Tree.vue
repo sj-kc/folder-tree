@@ -18,45 +18,45 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
-  name: "Tree",
+  name: 'Tree',
   components: {
-    Node: () => import("./Node"),
+    Node: () => import('./Node'),
   },
 
   data() {
     return {
       treeData: {
-        name: "Root",
+        name: 'Root',
         children: [
-          { name: "Parent Node" },
-          { name: "Parent Node" },
           {
-            name: "Parent Node",
+            name: 'Parent Node',
             children: [
               {
-                name: "Sibling Node",
-                children: [{ name: "Child Node" }, { name: "Child Node" }],
+                name: 'Parent Node',
+                children: [{ name: 'Child Node' }, { name: 'Child Node' }],
               },
-              { name: "Sibling Node" },
-              { name: "Sibling Node" },
+              { name: 'Sibling Node' },
+              { name: 'Sibling Node' },
             ],
           },
+          { name: 'Parent Node' },
+          { name: 'Parent Node' },
         ],
       },
     };
   },
   methods: {
     makeFolder(item) {
-      item.name = "Parent Node";
-      Vue.set(item, "children", []);
+      item.name = 'Parent Node';
+      Vue.set(item, 'children', []);
       this.addItem(item);
     },
     addItem(item) {
       item.children.push({
-        name: "Child Node",
+        name: 'Child Node',
       });
     },
   },
