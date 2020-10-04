@@ -1,9 +1,14 @@
 <template>
-  <li>
-    <div @click="addFolder" @dblclick="toggle">
-      {{ item.name }} {{ index }}
-      <span v-if="isFolder">[{{ isOpen ? "-" : "+" }}]</span>
-    </div>
+  <v-list-item-content>
+    <v-list-item @click="toggle" @dblclick="addFolder">
+      <v-icon v-if="isFolder">{{
+        isOpen ? "mdi mdi-folder-open" : "mdi mdi-folder"
+      }}</v-icon>
+
+      <v-list-item-title class="pl-4">
+        {{ item.name }} {{ index }}</v-list-item-title
+      >
+    </v-list-item>
     <ul v-show="isOpen" v-if="isFolder">
       <Node
         class="item"
@@ -14,9 +19,11 @@
         @add-folder="$emit('add-folder', $event)"
         @add-item="$emit('add-item', $event)"
       ></Node>
-      <li class="add" @click="$emit('add-item', item)">+</li>
+      <v-list-item-content class="pl-9" @click="$emit('add-item', item)">
+        +</v-list-item-content
+      >
     </ul>
-  </li>
+  </v-list-item-content>
 </template>
 
 <script>

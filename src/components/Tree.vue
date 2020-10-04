@@ -1,12 +1,15 @@
 <template>
-  <ul>
-    <Node
-      class="item"
-      :item="treeData"
-      @add-folder="makeFolder"
-      @add-item="addItem"
-    ></Node>
-  </ul>
+  <v-card class="mx-auto" max-width="500">
+    <v-list>
+      <v-subheader>My Tree</v-subheader>
+      <Node
+        class="item"
+        :item="treeData"
+        @add-folder="makeFolder"
+        @add-item="addItem"
+      ></Node>
+    </v-list>
+  </v-card>
 </template>
 
 <script>
@@ -23,17 +26,17 @@ export default {
       treeData: {
         name: "Root",
         children: [
-          { name: "Folder" },
-          { name: "Folder" },
+          { name: "Parent Node" },
+          { name: "Parent Node" },
           {
-            name: "Folder",
+            name: "Parent Node",
             children: [
               {
-                name: "Folder",
-                children: [{ name: "Folder" }, { name: "Folder" }],
+                name: "Sibling Node",
+                children: [{ name: "Child Node" }, { name: "Child Node" }],
               },
-              { name: "Folder" },
-              { name: "Folder" },
+              { name: "Sibling Node" },
+              { name: "Sibling Node" },
             ],
           },
         ],
@@ -42,12 +45,13 @@ export default {
   },
   methods: {
     makeFolder(item) {
+      item.name = "Parent Node";
       Vue.set(item, "children", []);
       this.addItem(item);
     },
     addItem(item) {
       item.children.push({
-        name: "Folder",
+        name: "Child Node",
       });
     },
   },
