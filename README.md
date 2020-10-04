@@ -1,7 +1,21 @@
 # folder-tree
 
-## Project setup
+
+A basic folder creator app.
+
+- Vue
+- ES6/ES7 - Javascript syntax.
+- Vuetify - Component styling.
+
+### Clone the repo
+
+```bash
+git clone https://github.com/sungkimcastro/folder-tree
 ```
+
+### Install dependencies
+
+```bash
 yarn install
 ```
 
@@ -10,15 +24,6 @@ yarn install
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Deployed 🚀:
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+https://folder-tree.netlify.app/
