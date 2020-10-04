@@ -1,12 +1,17 @@
 <template>
   <v-card class="mx-auto" max-width="500">
     <v-list>
-      <v-subheader>My Tree</v-subheader>
+      <v-list-item-content class="pl-5">
+        <v-list-item-title class="title">My tree </v-list-item-title>
+        <v-list-item-subtitle class="purple--text">
+          Double click in a node to make it a folder
+        </v-list-item-subtitle>
+      </v-list-item-content>
       <Node
-        class="item"
-        :item="treeData"
         @add-folder="makeFolder"
         @add-item="addItem"
+        :item="treeData"
+        class="item"
       ></Node>
     </v-list>
   </v-card>
