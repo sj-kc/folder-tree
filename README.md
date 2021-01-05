@@ -3,9 +3,9 @@
 
 A basic folder creator app.
 
-- Vue
-- ES6/ES7 - Javascript syntax.
-- Vuetify - Component styling.
+- Vue.
+- ES6/ES7.
+- Vuetify.
 
 ### Clone the repo
 
